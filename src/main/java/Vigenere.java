@@ -43,15 +43,14 @@ public class Vigenere {
             }
             return (char) (chAscii + key);
         }
-        else if (chAscii >= 97 && chAscii <= 122){
+        else  {//(chAscii >= 97 && chAscii <= 122){
             if(chAscii >= 122 - key + 1){
                 return (char) (chAscii - (26 - key));
             }
             return (char) (chAscii + key);
         }
-        else{
-            return ch;
-        }
+
+
     }
 
     public static char decryptCaesarLetter(char ch, int key) {
