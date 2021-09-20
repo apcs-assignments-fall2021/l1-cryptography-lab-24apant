@@ -74,6 +74,9 @@ public class Caesar {
     public static String encryptCaesarKey(String message, int key) {
         // REPLACE THIS WITH YOUR CODE
         String new_msg = "";
+        if (key > 26){
+            key %= 26;
+        }
         for (int i=0;i<message.length();i++){
             int currentAscii = (int) message.charAt(i);
             if (currentAscii >= 97 && currentAscii <= 122){
@@ -109,6 +112,9 @@ public class Caesar {
     public static String decryptCaesarKey(String message, int key) {
         // REPLACE THIS WITH YOUR CODE
         String new_msg = "";
+        if (key > 26){
+            key %= 26;
+        }
         for (int i=0; i<message.length();i++){
             int currentAscii = (int) message.charAt(i);
             if (currentAscii >= 65 && currentAscii <= 90){
