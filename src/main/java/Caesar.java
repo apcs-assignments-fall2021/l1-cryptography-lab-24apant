@@ -6,7 +6,33 @@ public class Caesar {
     // Ex. encryptCaesar("Hello, World!") => "Khoor, Zruog!"
     public static String encryptCaesar(String message) {
         // REPLACE THIS WITH YOUR CODE
-        return message;
+        String new_msg = "";
+        for (int i=0;i<message.length();i++){
+            int currentAscii = (int) message.charAt(i);
+            if (currentAscii >= 97 && currentAscii <= 122){
+                if (currentAscii >= 120){
+                    new_msg = new_msg + (char) (currentAscii - 23);
+
+                }
+                else {
+                    new_msg = new_msg + (char) (currentAscii + 3);
+                }
+            }
+
+            else if (currentAscii >= 65 && currentAscii <= 90){
+                if (currentAscii >= 88){
+                    new_msg = new_msg + (char) (currentAscii - 23);
+
+                }
+                else {
+                    new_msg = new_msg + (char) (currentAscii + 3);
+                }
+            }
+            else{
+                new_msg = new_msg + (char) (currentAscii);
+            }
+        }
+        return new_msg;
     }
 
     // Given a String, decrypts the String with the Caesar cipher
@@ -14,7 +40,32 @@ public class Caesar {
     // Ex. decryptCaesar("Khoor, Zruog!") => "Hello, World!"
     public static String decryptCaesar(String message) {
         // REPLACE THIS WITH YOUR CODE
-        return message;
+        String new_msg = "";
+        for (int i=0; i<message.length();i++){
+            int currentAscii = (int) message.charAt(i);
+            if (currentAscii >= 65 && currentAscii <= 90){
+                if (currentAscii <= 67){
+                    new_msg += (char) (currentAscii + 23);
+                }
+                else{
+                    new_msg += (char) (currentAscii - 3);
+                }
+
+            }
+            else if (currentAscii >= 97 && currentAscii <= 122){
+                if (currentAscii <= 99){
+                    new_msg += (char) (currentAscii + 23);
+                }
+                else{
+                    new_msg += (char) (currentAscii - 3);
+                }
+            }
+            else{
+                new_msg += (char) currentAscii;
+            }
+
+        }
+        return  new_msg;
     }
 
     // Given a String and a key corresponding to a shift, encrypts
